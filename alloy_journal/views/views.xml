@@ -1,0 +1,75 @@
+<odoo>
+  <data>
+    <record id="view_select_equipments" model="ir.ui.view">
+      <field name="name">Account Move</field>
+      <field name="model">account.move</field>
+      <field name="inherit_id" ref="account.view_move_form"/>
+      <field name="arch" type="xml">
+    
+
+         <xpath expr="//field[@name='journal_id']" position="after">
+          <field name="employee" invisible="1"/>
+        </xpath>
+      </field>
+    </record>
+
+
+
+
+    <record id="view_select_equipments_tree" model="ir.ui.view">
+      <field name="name">Account Move</field>
+      <field name="model">account.move</field>
+      <field name="inherit_id" ref="account.view_move_tree"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='journal_id']" position="before">
+          <field name="employee"/>
+        </xpath>
+
+      </field>
+    </record>
+
+
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="alloy_journal.action_window">
+      <field name="name">alloy_journal window</field>
+      <field name="res_model">alloy_journal.alloy_journal</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="alloy_journal.action_server">
+      <field name="name">alloy_journal server</field>
+      <field name="model_id" ref="model_alloy_journal_alloy_journal"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="alloy_journal" id="alloy_journal.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="alloy_journal.menu_1" parent="alloy_journal.menu_root"/>
+    <menuitem name="Menu 2" id="alloy_journal.menu_2" parent="alloy_journal.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="alloy_journal.menu_1_list" parent="alloy_journal.menu_1"
+              action="alloy_journal.action_window"/>
+    <menuitem name="Server to list" id="alloy_journal" parent="alloy_journal.menu_2"
+              action="alloy_journal.action_server"/>
+    -->
+  </data>
+</odoo>
