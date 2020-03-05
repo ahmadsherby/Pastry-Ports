@@ -11,7 +11,7 @@ import datetime
 class PrintInvoiceSummary(models.TransientModel):
     _name = "print.invoice.summary"
     
-    @api.model
+
     def _get_from_date(self):
         company = self.env.user.company_id
         current_date = datetime.date.today()
