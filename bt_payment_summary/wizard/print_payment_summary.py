@@ -45,7 +45,6 @@ class PrintPaymentSummary(models.TransientModel):
     currency_id = fields.Many2one('res.currency','Currency', default=lambda self: self.env.user.company_id.currency_id)
     
     
-    @api.multi
     def action_print_payment_summary(self,):
         
         workbook = xlwt.Workbook()
