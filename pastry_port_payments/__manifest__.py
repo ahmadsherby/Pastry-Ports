@@ -10,8 +10,6 @@
     'author': "Magdy, TeleNoc",
     'depends': ['sale'],
     'data': [
-        'security/ir.model.access.csv',
         'views/sale_order_view.xml',
-        'report/sales_report_view.xml',
     ],
 }
