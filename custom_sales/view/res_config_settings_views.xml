@@ -20,6 +20,44 @@
                     </div>
                 </div>
             </xpath>
+
+            <xpath expr="//div[5]/div[3]" position="after">
+                <div class="col-12 col-lg-6 o_setting_box" id="auto_create_invoice">
+                    <div class="o_setting_left_pane">
+                        <field name="auto_create_invoice"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="auto_create_invoice"/>
+                        <div class="text-muted" id="delivery_carrier">
+                            Automatic Create Invoice From Sales Order
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6 o_setting_box" id="auto_validate_invoice" attrs="{'invisible':[('auto_create_invoice','=',False)]}">
+                    <div class="o_setting_left_pane">
+                        <field name="auto_validate_invoice"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="auto_validate_invoice"/>
+                        <div class="text-muted" id="delivery_carrier">
+                            Automatic Validate Invoice From Sales Order
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6 o_setting_box" id="auto_reconcile_invoice" attrs="{'invisible':[('auto_validate_invoice','=',False)]}">
+                    <div class="o_setting_left_pane">
+                        <field name="auto_reconcile_invoice"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="auto_reconcile_invoice"/>
+                        <div class="text-muted" id="delivery_carrier">
+                            Automatic Reconcile Invoice From Sales Order
+                        </div>
+                    </div>
+                </div>
+            </xpath>
         </field>
     </record>
 
