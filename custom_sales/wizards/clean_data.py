@@ -21,6 +21,11 @@ class CleanData(models.TransientModel):
             
 
     def clean_data(self):
+
+        account_partial_reconcile = "account_partial_reconcile"
+        self.check_and_delete(account_partial_reconcile)
+
+
         sql = "delete from account_move_line where move_id in (select id from account_move where type != 'entry')"
         self._cr.execute(sql)
         sql = "delete from account_move where type != 'entry'"
@@ -66,12 +71,10 @@ class CleanData(models.TransientModel):
         pos_payment = "pos_payment"
         account_payment = "account_payment"
         at = "account_tax"
-        account_partial_reconcile = "account_partial_reconcile"
-
+        
         self.check_and_delete(pos_payment)
         self.check_and_delete(account_payment)
         self.check_and_delete(at)
-        self.check_and_delete(account_partial_reconcile)
         
         
 
