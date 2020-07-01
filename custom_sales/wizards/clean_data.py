@@ -34,11 +34,11 @@ class CleanData(models.TransientModel):
 
         pos_payment = "pos_payment"
         account_payment = "account_payment"
-        at = "account_tax"
+        # at = "account_tax"
 
         self.check_and_delete(pos_payment)
         self.check_and_delete(account_payment)
-        self.check_and_delete(at)
+        # self.check_and_delete(at)
 
         sq = "stock_quant"
         sml = "stock_move_line"
