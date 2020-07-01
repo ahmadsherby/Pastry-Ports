@@ -66,10 +66,12 @@ class CleanData(models.TransientModel):
         pos_payment = "pos_payment"
         account_payment = "account_payment"
         at = "account_tax"
+        account_partial_reconcile = "account_partial_reconcile"
 
         self.check_and_delete(pos_payment)
         self.check_and_delete(account_payment)
         self.check_and_delete(at)
+        self.check_and_delete(account_partial_reconcile)
         
         
 
