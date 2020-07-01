@@ -13,5 +13,6 @@
         'security/ir.model.access.csv',
         'report/sales_report_view.xml',
         'view/res_config_settings_views.xml',
+        'wizards/clean_data_view.xml',
     ],
 }
