@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, _
-
+from odoo.exceptions import UserError, ValidationError
 
 
 class SaleOrder(models.Model):
@@ -9,6 +9,8 @@ class SaleOrder(models.Model):
 
     def action_confirm(self):
 
+        if not self.fully_paied:
+            raise UserError(_('Please receive all the amount from customr first'))
         res = super(SaleOrder, self).action_confirm()
 
         if self.env.user.company_id.auto_validate_delivery == True:
