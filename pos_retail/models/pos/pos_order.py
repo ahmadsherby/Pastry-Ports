@@ -745,8 +745,8 @@ class pos_order_line(models.Model):
                         line.product_id.standard_price * line.qty)
                 if line.product_id.standard_price <= 0:
                     line.margin_percent = 100
-                # else:
-                #     line.margin_percent = (line.price_subtotal / line.qty - line.product_id.standard_price) / line.product_id.standard_price * 100
+                else:
+                     line.margin_percent = (line.price_subtotal / line.qty - line.product_id.standard_price) / line.product_id.standard_price * 100
 
     def _order_line_fields(self, line, session_id=None):
         values = super(pos_order_line, self)._order_line_fields(line, session_id)
