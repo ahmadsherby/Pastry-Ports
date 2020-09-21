@@ -42,5 +42,5 @@ class SaleOrder(models.Model):
                                 for line in pay.move_line_ids:
                                     if line.account_id == self.partner_id.property_account_receivable_id and pay.partner_id == self.partner_id:
                                         invoice.js_assign_outstanding_line(line.id)
+
         return res
-    
